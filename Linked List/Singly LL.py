@@ -91,7 +91,7 @@ class SingleLinkedList:
         if x == self.start.info:
             temp = Node(data)
             temp.link = self.start
-            self.sart = temp
+            self.start = temp
             return
 
         # Find reference to predecessor of node containing x
