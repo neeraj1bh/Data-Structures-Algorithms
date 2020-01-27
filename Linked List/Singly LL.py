@@ -50,7 +50,7 @@ class SingleLinkedList:
 
     def insert_at_end(self, data):
         temp = Node(data)
-        if self.start is None:
+        if self.start is None:  # Insert a new node in an empty list
             self.start = temp
             return
 
