@@ -6,12 +6,13 @@ class Queue:
 
     def __init__(self):
         self.items = []
+        self.front = 0
 
     def is_empty(self):
-        return self.items == []
+        return self.front == len(self.items)
 
     def size(self):
-        return len(self.items)
+        return len(self.items)-self.front
 
     def enqueue(self, item):
         self.items.append(item)
@@ -19,12 +20,17 @@ class Queue:
     def dequeue(self):
         if self.is_empty():
             raise EmptyQueueError("Queue is empty")
-        return self.items.pop(0)
+
+        x = self.items[self.front]
+        self.items[self.front] = None
+        self.front = self.front +1
+        return x
 
     def peek(self):
         if self.is_empty():
             raise EmptyQueueError("Queue is empty")
-        return self.items[0]
+            
+        return self.items[self.front]
 
     def display(self):
         print(self.items)
