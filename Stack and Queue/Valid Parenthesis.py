@@ -1,5 +1,6 @@
 from Stack import Stack
 
+
 def is_valid(expr):
     st = Stack()
 
@@ -13,7 +14,7 @@ def is_valid(expr):
             else:
                 char = st.pop()
                 if not match_parentheses(char, ch):
-                    print("Mismatched parentheses are ", char," and ", ch)
+                    print("Mismatched parentheses are ", char, " and ", ch)
                     return False
 
     if st.is_empty():
@@ -23,16 +24,18 @@ def is_valid(expr):
         print("Left parentheses are more than right parentheses")
         return False
 
-def match_parentheses(leftPar, rightPar):
-    if leftPar == '[' and rightPar == ']':
+
+def match_parentheses(leftpar, rightpar):
+    if leftpar == '[' and rightpar == ']':
         return True
-    if leftPar == '{' and rightPar == '}':
+    if leftpar == '{' and rightpar == '}':
         return True
-    if leftPar == '(' and rightPar == ')':
+    if leftpar == '(' and rightpar == ')':
         return True
     return False
 
 #################################################
+
 
 while True:
     print("Enter an expression with parentheses (q to quit) : ", end='')
